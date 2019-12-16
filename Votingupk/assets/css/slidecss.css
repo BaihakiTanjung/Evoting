@@ -1,0 +1,69 @@
+html, body {
+  background: #333;
+}
+
+.loSlide {
+  padding: 0;
+  width: 800px;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center
+}
+
+.loSlide * {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+input {
+  display: none;
+}
+
+input:checked + .slide {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide {
+  opacity: 0;
+  transition: opacity 1s;
+  top: 0;
+  position: absolute;
+}
+
+.slide picture.lozad {
+  width: 800px;
+  height: 600px;
+  display: none;
+  top: 0;
+  position: absolute;
+}
+
+input:checked + .slide picture, .slide picture.lozad[data-loaded="true"] {
+  display: block;
+}
+
+label {
+  z-index: 2;
+  top: 550px;
+  width: 16px;
+  height: 16px;
+  margin: 7px;
+  position: relative;
+  display: inline-block;
+  border: 8px solid white;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.67);
+}
+
+label:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.67);
+}
+
+input:checked + div + label {
+  background: rgba(0, 0, 0, 0.67);
+}
